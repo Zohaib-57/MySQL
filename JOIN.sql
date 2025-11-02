@@ -60,9 +60,14 @@ SELECT *
 FROM student_7
 RIGHT JOIN result_3
 ON student_7.StudentID = result_3.StudentID
-WHERE result_3.StudentID IS NULL;
+WHERE student_7.StudentID IS NULL;
 
--- FULL OUTER JOIN
+-- UNION && FULL OUTER JOIN 
+SELECT Name, Class FROM student_7 WHERE Class >= 11
+UNION
+SELECT Name, Class FROM student_7 WHERE Class >= 11
+ORDER BY Class DESC;
+
 SELECT student_7.Name, result_3.Subject, result_3.Marks
 FROM student_7
 LEFT JOIN result_3 ON student_7.StudentID = result_3.StudentID
